@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { createGlobalStyle } from "styled-components";
 
-function App() {
+import DesktopRoot from "./desktop/DesktopRoot";
+// import MobileRoot from "./mobile/MobileRoot";
+
+import XiguaFontTtf from "./assets/fonts/xigua-default-fonts.ttf";
+import XiguaFontWoff2 from "./assets/fonts/xigua-default-fonts.woff2";
+
+const GlobalStyle = createGlobalStyle`
+  * {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+  }
+
+  @font-face {
+    font-family: "XiguaDefaultFonts";
+    src: local('XiguaDefaultFonts1'), local('XiguaDefaultFonts2'), url(${XiguaFontTtf}),url(${XiguaFontWoff2});
+  }
+
+  body {
+    font-family: "XiguaDefaultFonts";
+    background-color: ${(props) => props.theme.scaffoldBackgroundColor};
+
+    & a {
+     color: ${(props) => props.theme.darkGray1} 
+    }
+  
+  }
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <GlobalStyle />
+      <DesktopRoot />
+    </>
   );
-}
+};
 
 export default App;

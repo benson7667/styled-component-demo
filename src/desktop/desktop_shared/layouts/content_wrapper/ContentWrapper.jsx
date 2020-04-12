@@ -2,14 +2,14 @@ import React from "react";
 import { any } from "prop-types";
 import { StyledAppContent, StyledAppContentPadded } from "./Styles";
 
-const AppContent = (props) => (
+const ContentWrapper = (props) => (
   <StyledAppContent>
     <StyledAppContentPadded>{props.children}</StyledAppContentPadded>
   </StyledAppContent>
 );
 
-AppContent.propTypes = {
+ContentWrapper.propTypes = {
   children: any.isRequired,
 };
 
-export default AppContent;
+export default ContentWrapper;

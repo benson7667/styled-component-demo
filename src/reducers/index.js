@@ -3,7 +3,8 @@ import { combineReducers } from "redux";
 import homeReducer from "../desktop/pages/home/homeReducer";
 
 const reducers = combineReducers({
-  homeReducer,
+  home: homeReducer,
+  auth: {},
 });
 
 export default reducers;

@@ -7,14 +7,16 @@ const theme = {
 
   darkGray1: "#333333",
   darkGray2: "#4a4a4a",
+  darkGray3: "#838383",
+  darkGray4: "#ababab",
 
   lightGray1: "#ececec",
   lightGray2: "#f0f0f0",
 
   scaffoldBackgroundColor: "#f7f7f7",
-
   white: "#ffffff",
   black: "#000",
+  orange: "#e68c00",
 
   fontFamily: "Sans-serif",
 };

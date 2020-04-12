@@ -1,26 +1,89 @@
 import React, { Component } from "react";
-import { any, func, object, string } from "prop-types";
-import { StyledButton } from "./Styles";
+import { withTheme } from "styled-components";
+import { any, func, number, object, string } from "prop-types";
+import { PrimaryButton, SecondaryButton, LinkButton } from "./Styles";
 
 class Button extends Component {
   render() {
-    const { icon, onClick, shape, size, style, value } = this.props;
+    const {
+      icon,
+      iconColor,
+      onClick,
+      borderRadius,
+      style,
+      type,
+      textSize,
+      value,
+    } = this.props;
 
-    return (
-      <StyledButton onClick={onClick} size={size} style={style} shape={shape}>
-        {icon}
-        {value && <p className="button-text">{value}</p>}
-      </StyledButton>
-    );
+    // gradient button
+    if (type === "primary") {
+      console.log(value);
+      return (
+        <PrimaryButton
+          borderRadius={borderRadius}
+          iconColor={iconColor}
+          onClick={onClick}
+          style={style}
+          textSize={textSize}
+          value={value}
+        >
+          {icon && <div className="button-icon">{icon}</div>}
+          {value && <p>{value}</p>}
+        </PrimaryButton>
+      );
+    }
+
+    // normal button
+    if (type === "secondary") {
+      return (
+        <SecondaryButton
+          borderRadius={borderRadius}
+          iconColor={iconColor}
+          onClick={onClick}
+          style={style}
+          textSize={textSize}
+          value={value}
+        >
+          {icon && <div className="button-icon">{icon}</div>}
+          {value && <p>{value}</p>}
+        </SecondaryButton>
+      );
+    }
+
+    // link button
+    if (type === "link") {
+      return (
+        <LinkButton
+          borderRadius={borderRadius}
+          iconColor={iconColor}
+          onClick={onClick}
+          style={style}
+          textSize={textSize}
+          value={value}
+        >
+          {icon && <div className="button-icon">{icon}</div>}
+          {value && <p>{value}</p>}
+        </LinkButton>
+      );
+    }
   }
 }
 
 Button.propTypes = {
   icon: any,
   onClick: func.isRequired,
-  shape: string,
   style: object,
+  type: string,
   value: string,
+  textSize: number,
 };
 
-export default Button;
+Button.defaultProps = {
+  type: "secondary",
+  textSize: 12,
+  borderRadius: 50,
+  iconColor: "#4a4a4a",
+};
+
+export default withTheme(Button);

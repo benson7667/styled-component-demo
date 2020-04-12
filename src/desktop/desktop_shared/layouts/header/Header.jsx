@@ -25,9 +25,8 @@ class Header extends Component {
         <LeftWrapper>
           <Button
             onClick={() => {}}
-            icon={MenuIcon20}
+            icon={<FiMenu size={20} />}
             style={{ marginRight: "20px" }}
-            shape="circle"
           />
           <a href="/">
             <img alt="xigua-logo" src={XiguaLogoIcon} />

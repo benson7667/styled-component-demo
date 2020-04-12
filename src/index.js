@@ -1,9 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { Provider } from "react-redux";
 import { createGlobalStyle } from "styled-components";
 
-import App from "./App";
+import DesktopRoutes from "./desktop/DesktopRoutes";
 import AppTheme from "./AppTheme";
+
+import XiguaFontTtf from "./assets/fonts/xigua-default-fonts.ttf";
+import XiguaFontWoff2 from "./assets/fonts/xigua-default-fonts.woff2";
+
+import store from "./store";
 
 import * as serviceWorker from "./serviceWorker";
 
@@ -15,22 +21,32 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  @font-face {
+    font-family: "XiguaDefaultFonts";
+    src: local('XiguaDefaultFonts1'), local('XiguaDefaultFonts2'), url(${XiguaFontTtf}),url(${XiguaFontWoff2});
+  }
+
   body {
-    background-color: ${(props) => props.theme.scaffoldBackgroundColor}
+    font-family: "XiguaDefaultFonts";
+    background-color: ${(props) => props.theme.scaffoldBackgroundColor};
+
+    & a {
+     color: ${(props) => props.theme.darkGray1} 
+    }
+  
   }
 `;
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppTheme>
-      <App />
-      <GlobalStyle />
-    </AppTheme>
+    <Provider store={store}>
+      <AppTheme>
+        <DesktopRoutes />
+        <GlobalStyle />
+      </AppTheme>
+    </Provider>
   </React.StrictMode>,
   document.getElementById("root")
 );
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();

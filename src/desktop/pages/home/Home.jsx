@@ -1,6 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
+import { connect } from "react-redux";
 import { Header, SideBar, AppContent } from "../../desktop_shared/layouts";
+import { Actions } from "./homeAction";
 
 const Grid = styled.div`
   display: grid;
@@ -20,29 +22,38 @@ const Card = styled.div`
   }
 `;
 
-const Home = () => {
-  return (
-    <>
-      <Header />
+class Home extends Component {
+  componentDidMount() {
+    this.props.test();
+  }
 
-      <SideBar />
+  render() {
+    console.log(this.props);
+    return (
+      <>
+        <Header />
+        <SideBar />
+        <AppContent>
+          <h2 style={{ marginBottom: "10px" }}>为你推荐</h2>
 
-      <AppContent>
-        <h2 style={{ marginBottom: "10px" }}>为你推荐</h2>
+          <Grid>
+            <Card size="fluid">
+              <picture>
+                <img
+                  alt=""
+                  src="https://lf3-xgcdn-tos.pstatp.com/img/xigua-lvideo-pic/04b6cd50643937da04d5a5698c920324~tplv-crop-center:861:1203.jpg"
+                />
+              </picture>
+            </Card>
+          </Grid>
+        </AppContent>
+      </>
+    );
+  }
+}
 
-        <Grid>
-          <Card size="fluid">
-            <picture>
-              <img
-                alt=""
-                src="https://lf3-xgcdn-tos.pstatp.com/img/xigua-lvideo-pic/04b6cd50643937da04d5a5698c920324~tplv-crop-center:861:1203.jpg"
-              />
-            </picture>
-          </Card>
-        </Grid>
-      </AppContent>
-    </>
-  );
+const mapDispatchToProps = {
+  test: Actions.GET_HOME_FEED_REQUEST,
 };
 
-export default Home;
+export default connect(null, mapDispatchToProps)(Home);

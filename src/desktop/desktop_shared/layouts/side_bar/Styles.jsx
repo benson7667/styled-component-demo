@@ -1,13 +1,16 @@
 import styled from "styled-components";
 
+const SIDE_BAR_EXPAND_WIDTH = "200px";
+const SIDE_BAR_COLLAPSED_WIDTH = "65px";
+
 export const SideBarWrapper = styled.div`
-  width: 220px;
+  width: ${SIDE_BAR_EXPAND_WIDTH};
   background-color: white;
   position: fixed;
   left: 0;
   top: 0;
   height: 100%;
-  margin-top: 75px;
+  margin-top: 65px;
   overflow: scroll;
 
   ::-webkit-scrollbar {
@@ -29,19 +32,18 @@ export const SideBarList = styled.ul`
 export const SideBarListItem = styled.li`
   cursor: pointer;
   display: flex;
-  padding: 10px 30px 10px;
+  padding: 10px 25px 10px;
   align-items: center;
   transition: color 0.4s ease-in-out;
-  background-color: ${(props) =>
-    props.active ? props.theme.white : "transparent"};
+  background-color: ${(props) => (props.active ? "#fff2f8" : "transparent")};
   transition: background-color 0.4s ease-in;
   color: ${(props) =>
-    props.active ? props.theme.primaryColor : props.theme.primaryGray};
+    props.active ? props.theme.primaryColor : props.theme.darkGray3};
 
   & a {
     text-decoration: none;
     margin-left: 25px;
-    font-size: 14px;
+    font-size: 12px;
     color: ${(props) =>
       props.active ? props.theme.primaryColor : props.theme.primaryGray};
   }
@@ -54,8 +56,43 @@ export const SideBarListItem = styled.li`
 export const SideBarGroupTitle = styled.li`
   font-weight: bold;
   color: ${(props) => props.theme.primaryGray};
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px 20px 10px;
   margin-top: 12px;
   border-top: ${(props) => `1px solid ${props.theme.lightGray1}`};
+`;
+
+export const CollapsedSideBarWrapper = styled.div`
+  width: ${SIDE_BAR_COLLAPSED_WIDTH};
+  background-color: white;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  margin-top: 65px;
+`;
+
+export const CollapsedSideBarListItem = styled.li`
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  align-items: center;
+  transition: color 0.4s ease-in-out;
+  background-color: ${(props) => (props.active ? "#fff2f8" : "transparent")};
+  transition: background-color 0.4s ease-in;
+  color: ${(props) =>
+    props.active ? props.theme.primaryColor : props.theme.darkGray3};
+
+  & a {
+    text-decoration: none;
+    font-size: 10px;
+    margin-top: 5px;
+    color: ${(props) =>
+      props.active ? props.theme.primaryColor : props.theme.primaryGray};
+  }
+
+  :hover {
+    background-color: ${(props) => !props.active && props.theme.lightGray1};
+  }
 `;

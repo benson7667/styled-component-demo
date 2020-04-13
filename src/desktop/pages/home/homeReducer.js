@@ -5,7 +5,7 @@ const defaultState = {
 };
 
 const homeReducer = (state = defaultState, action) => {
-  switch (action) {
+  switch (action.type) {
     case ActionTypes.GET_HOME_FEED_REQUEST:
       return {
         ...state,

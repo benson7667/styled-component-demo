@@ -4,12 +4,14 @@ export const DefaultButton = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
-  padding: 10px;
+  justify-content: center;
+  padding: 8px 12px;
   border: none;
   background-color: transparent;
   transition: background-color 0.2s ease-in-out;
 
   & .button-icon {
+    display: flex;
     color: ${(props) => props.iconColor};
     margin-right: ${(props) => (props.value ? "5px" : 0)};
   }

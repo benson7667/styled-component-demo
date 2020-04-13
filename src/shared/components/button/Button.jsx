@@ -18,7 +18,6 @@ class Button extends Component {
 
     // gradient button
     if (type === "primary") {
-      console.log(value);
       return (
         <PrimaryButton
           borderRadius={borderRadius}
@@ -81,7 +80,7 @@ Button.propTypes = {
 
 Button.defaultProps = {
   type: "secondary",
-  textSize: 12,
+  textSize: 10,
   borderRadius: 50,
   iconColor: "#4a4a4a",
 };

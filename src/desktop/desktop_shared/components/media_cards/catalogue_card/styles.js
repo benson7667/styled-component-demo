@@ -37,11 +37,11 @@ export const CataloguePopContent = styled.div`
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  font-size: 12px;
+  font-size: 10px;
   color: ${(props) => props.theme.darkGray3};
   overflow: hidden;
   background-color: ${(props) => props.theme.white};
-  box-shadow: ${(props) => `0 2px 10px ${props.theme.lightGray1}`};
+  box-shadow: ${(props) => props.theme.shadow1};
   transition: opacity 0.15s linear, transform 0.15s linear, z-index 0.15s linear;
 
   img {
@@ -100,11 +100,15 @@ export const MovieSynopsis = styled(Ellipsis)`
   margin-top: 10px;
 
   @media screen and (max-width: 1920px) {
-    -webkit-line-clamp: 6;
+    -webkit-line-clamp: ${(props) => props.size === "fluid" && 6};
   }
 
   @media screen and (max-width: 1700px) {
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: ${(props) => props.size === "fluid" && 3};
+  }
+
+  @media screen and (max-width: 1024px) {
+    display: ${(props) => props.size === "fluid" && "none"};
   }
 
   -webkit-line-clamp: ${(props) => {
@@ -128,9 +132,35 @@ export const ActionBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    padding: 10px;
+  }
 `;
 
-export const StyledCatalogueCardSkeleton = styled.div`
-  background-color: lightGray;
-  border-radius: 40px;
+export const CatalogueSkeletonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ImageSkeleton = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  height: 100%;
+  overflow: hidden;
+  background-color: ${(props) => props.theme.lightGray1};
+
+  & img {
+    width: 80%;
+  }
+`;
+
+export const TextSkeleton = styled.div`
+  width: ${(props) => (props.width ? `${props.width}%` : "70%")};
+  height: 20px;
+  margin-top: 5px;
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.lightGray1};
 `;

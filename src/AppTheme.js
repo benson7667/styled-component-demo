@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components";
 
 const theme = {
-  primaryColor: " #ff3183",
+  primaryColor: "#ff3183",
   accentColor: "#ff102b",
 
   darkGray1: "#333333",
@@ -12,6 +12,8 @@ const theme = {
 
   lightGray1: "#ececec",
   lightGray2: "#f0f0f0",
+
+  shadow1: "0 5px 12px #e0e0e0",
 
   scaffoldBackgroundColor: "#f7f7f7",
   white: "#ffffff",

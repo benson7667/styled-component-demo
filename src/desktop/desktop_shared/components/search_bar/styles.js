@@ -9,7 +9,7 @@ export const SearchInput = styled.input`
   border: ${(props) => `2px solid ${props.theme.accentColor}`};
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  padding: 14px;
+  padding: 10px;
   padding-left: 20px;
   font-size: 12px;
   caret-color: ${(props) => props.theme.primaryColor};
@@ -27,7 +27,7 @@ export const SearchButton = styled.button`
   border: none;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  padding: 10px 20px 10px;
+  padding: 10px 5px 10px;
   color: white;
   background-color: ${(props) => props.theme.accentColor};
   background-image: ${(props) =>

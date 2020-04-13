@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import { FiSearch } from "react-icons/fi";
-import { SearchBarWrapper, SearchInput, SearchButton } from "./Styles";
+import { SearchBarWrapper, SearchInput, SearchButton } from "./styles";
 
 class SearchBar extends Component {
   render() {

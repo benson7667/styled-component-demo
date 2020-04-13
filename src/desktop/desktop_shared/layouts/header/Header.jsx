@@ -9,14 +9,7 @@ import {
   MiddleWrapper,
   RightWrapper,
 } from "./Styles";
-import {
-  XiguaLogoIcon,
-  UserIcon,
-  MenuIcon20,
-  MonitorIcon20,
-  DownloadIcon20,
-  UploadIcon20,
-} from "../../../../constants/icons";
+import { XiguaLogoIcon, UserIcon } from "../../../../constants/icons";
 
 class Header extends Component {
   render() {
@@ -25,7 +18,7 @@ class Header extends Component {
         <LeftWrapper>
           <Button
             onClick={() => {}}
-            icon={<FiMenu size={20} />}
+            icon={<FiMenu size={15} />}
             style={{ marginRight: "20px" }}
           />
           <a href="/">
@@ -40,21 +33,21 @@ class Header extends Component {
         <RightWrapper>
           <li>
             <a href="/">
-              {DownloadIcon20}
+              <FiDownload size={15} />
               <p>下载APP</p>
             </a>
           </li>
 
           <li>
             <a href="/">
-              {MonitorIcon20}
+              <FiMonitor size={15} />
               <p>直播</p>
             </a>
           </li>
 
           <li>
             <a href="/">
-              {UploadIcon20}
+              <FiUpload size={15} />
               <p>发布视频</p>
             </a>
           </li>

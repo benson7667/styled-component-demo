@@ -1,9 +1,22 @@
-import React, { Component } from "react";
+import React from "react";
+import {
+  CatalogueSkeletonWrapper,
+  ImageSkeleton,
+  TextSkeleton,
+} from "./styles";
+import XiguaLogoGray from "../../../../../assets/logo/xigua-logo-gray.svg";
 
-class CatalogueCardSkeleton extends Component {
-  render() {
-    return <div>asdasd</div>;
-  }
-}
+const CatalogueCardSkeleton = (props) => {
+  return (
+    <CatalogueSkeletonWrapper>
+      <ImageSkeleton>
+        <img alt="" src={XiguaLogoGray} />
+      </ImageSkeleton>
+
+      <TextSkeleton />
+      <TextSkeleton width={90} />
+    </CatalogueSkeletonWrapper>
+  );
+};
 
 export default CatalogueCardSkeleton;

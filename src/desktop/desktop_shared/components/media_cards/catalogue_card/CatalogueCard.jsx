@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { func, number, oneOf, string } from "prop-types";
+import { array, func, number, oneOf, string } from "prop-types";
 import { FiPlay, FiStar } from "react-icons/fi";
 
 import { Ellipsis } from "../../../../../shared/styles/CommonStyle";
@@ -15,7 +15,7 @@ import {
   MovieAbout,
   MovieSynopsis,
   ActionBar,
-} from "./Styles";
+} from "./styles";
 
 class CatalogueCard extends Component {
   render() {
@@ -70,10 +70,8 @@ class CatalogueCard extends Component {
             </MovieAbout>
 
             <MovieSynopsis size={size}>
-              {/* <Ellipsis line={4}> */}
               <label>简介:</label>
               <p>{movieSynopsis}</p>
-              {/* </Ellipsis> */}
             </MovieSynopsis>
 
             <ActionBar>
@@ -81,14 +79,14 @@ class CatalogueCard extends Component {
                 onClick={handlePlayClick(id)}
                 value="立即观看"
                 type="primary"
-                icon={<FiPlay size={20} />}
+                icon={<FiPlay size={15} />}
               />
 
               <Button
                 onClick={handleSaveClick(id)}
                 value="收藏"
                 type="link"
-                icon={<FiStar size={20} />}
+                icon={<FiStar size={15} />}
               />
             </ActionBar>
           </CataloguePopContentInfoWrapper>
@@ -103,8 +101,8 @@ CatalogueCard.propTypes = {
   descrp: string.isRequired,
   coverImage: string.isRequired,
   infoImage: string.isRequired,
-  movieType: string.isRequired,
-  movieCasters: string.isRequired,
+  movieType: array.isRequired,
+  movieCasters: array.isRequired,
   movieRatings: number,
   movieSynopsis: string.isRequired,
   handlePlayClick: func.isRequired,

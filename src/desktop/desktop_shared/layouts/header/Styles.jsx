@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const HeaderContainer = styled.div`
   z-index: 30;
-  height: 75px;
+  height: 65px;
   display: flex;
-  padding: 0 20px;
+  padding: 0 15px;
   min-width: 1024px;
   background-color: ${(props) => props.theme.white};
   box-shadow: ${(props) => `0px 3px 10px ${props.theme.lightGray2}`};
@@ -50,20 +50,22 @@ export const RightWrapper = styled.ul`
     }
 
     & p {
-      font-size: 12px;
-      margin-top: 2px;
+      font-size: 10px;
+      margin-top: 4px;
     }
 
     & .login-btn {
       display: flex;
+      align-items: center;
       border: 1px solid ${(props) => props.theme.primaryColor};
       border-radius: 40px;
-      padding: 10px;
+      padding: 8px;
       color: ${(props) => props.theme.primaryColor};
     }
 
     & .login-btn-text {
-      margin-left: 8px;
+      margin-left: 5px;
+      font-size: 12px;
     }
 
     :hover {

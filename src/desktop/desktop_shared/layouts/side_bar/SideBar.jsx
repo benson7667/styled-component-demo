@@ -33,19 +33,17 @@ class SideBar extends Component {
   }
 
   handleWindowResize = () => {
-    const { expandSideBar, collapseSideBar, isSidebarCollapsed } = this.props;
+    const { toggleSideBar, isSidebarCollapsed } = this.props;
     const { width } = getWindowDimensions(window);
 
     if (width > 1100 && isSidebarCollapsed) {
-      return expandSideBar();
+      toggleSideBar();
     }
 
     if (width < 1100 && !isSidebarCollapsed) {
-      return collapseSideBar();
+      toggleSideBar();
     }
   };
-
-  handleToggleSideBarCollapse = () => {};
 
   handleSetScrollbarTrack = () => {
     this.setState((prevState) => ({
@@ -122,8 +120,6 @@ class SideBar extends Component {
 
 SideBar.propTypes = {
   isSidebarCollapsed: bool,
-  collapseSideBar: func,
-  expandSideBar: func,
 };
 
 export default connect()(withTheme(SideBar));

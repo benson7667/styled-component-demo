@@ -11,8 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = {
-  expandSideBar: Actions.EXPAND_SIDE_BAR,
-  collapseSideBar: Actions.COLLAPSE_SIDE_BAR,
+  toggleSideBar: Actions.TOGGLE_SIDE_BAR,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SideBarContainer);

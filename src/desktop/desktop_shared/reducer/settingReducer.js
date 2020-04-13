@@ -6,16 +6,10 @@ const defaultState = {
 
 const settingReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case ActionTypes.EXPAND_SIDE_BAR:
+    case ActionTypes.TOGGLE_SIDE_BAR:
       return {
         ...state,
-        isSidebarCollapsed: false,
-      };
-
-    case ActionTypes.COLLAPSE_SIDE_BAR:
-      return {
-        ...state,
-        isSidebarCollapsed: true,
+        isSidebarCollapsed: !state.isSidebarCollapsed,
       };
 
     default:

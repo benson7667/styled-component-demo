@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from "react-redux";
 import { FiMenu, FiDownload, FiUpload, FiMonitor } from "react-icons/fi";
 
 import SearchBar from "../../components/search_bar";
@@ -10,6 +11,7 @@ import {
   RightWrapper,
 } from "./Styles";
 import { XiguaLogoIcon, UserIcon } from "../../../../constants/icons";
+import { Actions } from "../../../desktop_shared/actions";
 
 class Header extends Component {
   render() {
@@ -17,7 +19,7 @@ class Header extends Component {
       <HeaderContainer>
         <LeftWrapper>
           <Button
-            onClick={() => {}}
+            onClick={this.props.toggleSideBar}
             icon={<FiMenu size={15} />}
             style={{ marginRight: "20px" }}
           />
@@ -64,4 +66,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapDispatchToProps = {
+  toggleSideBar: Actions.TOGGLE_SIDE_BAR,
+};
+
+export default connect(null, mapDispatchToProps)(Header);

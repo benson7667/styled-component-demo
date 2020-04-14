@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { Ellipsis } from "../../../../../shared/styles/CommonStyle";
 
 export const CatalogueImageWrapper = styled.div`
-  background-color: lightblue;
   border-radius: 10px;
   overflow: hidden;
 

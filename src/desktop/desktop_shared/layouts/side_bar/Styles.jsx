@@ -86,7 +86,7 @@ export const CollapsedSideBarListItem = styled.li`
 
   & a {
     text-decoration: none;
-    font-size: 10px;
+    font-size: 12px;
     margin-top: 5px;
     color: ${(props) =>
       props.active ? props.theme.primaryColor : props.theme.primaryGray};

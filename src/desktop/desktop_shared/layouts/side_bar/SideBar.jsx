@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { bool, func } from "prop-types";
+import { bool } from "prop-types";
 import { connect } from "react-redux";
 import { withTheme } from "styled-components";
 import { FiHome, FiMonitor, FiMusic } from "react-icons/fi";

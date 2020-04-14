@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { string, number } from "prop-types";
+import { func, string, number } from "prop-types";
 import {
   VideoCardWrapper,
   VideoCoverImageWrapper,
@@ -36,6 +36,7 @@ class VideoCard extends Component {
       id,
       coverImage,
       creatorAvatar,
+      handleOnCardClick,
       thumbnailVideo,
       duration,
       creator,
@@ -45,7 +46,7 @@ class VideoCard extends Component {
     } = this.props;
 
     return (
-      <VideoCardWrapper>
+      <VideoCardWrapper onClick={handleOnCardClick(id)}>
         <VideoCoverImageWrapper
           onMouseLeave={this.handleRemoveVideo}
           onMouseEnter={this.handlePlayVideo}
@@ -62,7 +63,7 @@ class VideoCard extends Component {
         </VideoCoverImageWrapper>
 
         <VideoCreatorInfo>
-          <AvatarCircle size={35} image={creatorAvatar} />
+          <AvatarCircle size={40} image={creatorAvatar} />
           <CreatorName line={1}>{creator}</CreatorName>
         </VideoCreatorInfo>
 
@@ -90,6 +91,7 @@ VideoCard.propTypes = {
   title: string,
   postedDate: string,
   viewCount: number,
+  handleOnCardClick: func,
 };
 
 export default VideoCard;

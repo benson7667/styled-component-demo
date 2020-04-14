@@ -2,7 +2,7 @@ import React from "react";
 
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { Home, Videos, Me, Error404 } from "./pages";
+import { Home, Videos, Error404 } from "./pages";
 
 const DesktopRoutes = () => (
   <Router>

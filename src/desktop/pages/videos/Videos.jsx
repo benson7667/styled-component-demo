@@ -1,17 +1,14 @@
 import React, { Component } from "react";
-import styled from "styled-components";
-import { Header, SideBar, ContentWrapper } from "../../desktop_shared/layouts";
+import {
+  Header,
+  SideBar,
+  ContentWrapper,
+  GridView,
+} from "../../desktop_shared/layouts";
 import {
   VideoCard,
   VideoCardSkeleton,
 } from "../../desktop_shared/components/media_cards/video_card";
-
-const Grid = styled.div`
-  display: grid;
-  grid-column-gap: 10px;
-  grid-row-gap: 50px;
-  grid-template-columns: repeat(4, minmax(200px, 1fr));
-`;
 
 class Videos extends Component {
   render() {
@@ -22,7 +19,9 @@ class Videos extends Component {
         <ContentWrapper>
           <h3 style={{ marginBottom: "25px" }}>影视</h3>
 
-          <Grid>
+          <GridView colNumber={4} colMinWidth="160px">
+            <VideoCardSkeleton />
+
             {new Array(10).fill("").map((item, index) => (
               <VideoCard
                 key={index}
@@ -37,7 +36,7 @@ class Videos extends Component {
                 viewCount={8920}
               />
             ))}
-          </Grid>
+          </GridView>
         </ContentWrapper>
       </>
     );

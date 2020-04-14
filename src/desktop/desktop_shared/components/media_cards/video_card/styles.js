@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { Ellipsis } from "../../../../../shared/styles/CommonStyle";
 
+//  VideoCard
 export const VideoCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -11,18 +12,27 @@ export const VideoCoverImageWrapper = styled.div`
   position: relative;
   overflow: hidden;
   border-radius: 10px;
+  background-color: ${(props) => props.theme.lightGray1};
+  /* min-height: 150px; */
 
   & img {
     width: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
+    /* min-height: 150px; */
   }
 
   & video {
+    opacity: 0;
     z-index: 1;
     position: absolute;
     left: 0;
     width: 100%;
+    /* min-height: 150px; */
+  }
+
+  &:hover img {
+    transform: scale(1.05);
   }
 `;
 
@@ -48,8 +58,7 @@ export const VideoCreatorInfo = styled.div`
 
 export const CreatorName = styled(Ellipsis)`
   cursor: pointer;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 13px;
   margin-left: 4px;
   padding-bottom: 2px;
   transition: color 0.3s ease-in-out;
@@ -71,12 +80,47 @@ export const VideoTrafficWrapper = styled.div`
 
 export const VideoTitle = styled(Ellipsis)`
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   margin-top: 4px;
-  font-weight: 600;
   transition: color 0.3s ease-in-out;
 
   &:hover {
     color: ${(props) => props.theme.accentColor};
   }
+`;
+
+// video card skeleton
+export const VideoCardSkeletonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const VideoCardImageSkeleton = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: ${(props) => props.theme.lightGray1};
+  border-radius: 10px;
+  /* min-height: 150px; */
+
+  & img {
+    width: 60%;
+  }
+`;
+
+export const CreatorNameSkeleton = styled.div`
+  width: 80px;
+  height: 15px;
+  margin-left: 10px;
+  border-radius: 20px;
+  background-color: ${(props) => props.theme.lightGray1};
+`;
+
+export const TextSkeleton = styled.div`
+  margin-top: 5px;
+  background-color: ${(props) => props.theme.lightGray1};
+  width: ${(props) => (props.width ? `${props.width}%` : "95%")};
+  height: ${(props) => (props.height ? `${props.height}px` : "30px")};
+  border-radius: 10px;
 `;

@@ -6,7 +6,7 @@ const AvatarCircle = (props) => {
   const { borderWidth, size, image } = props;
   return (
     <AvatarCircleWrapper borderWidth={borderWidth} size={size}>
-      <img alt="" src={image} />
+      {image && <img alt="" src={image} />}
     </AvatarCircleWrapper>
   );
 };

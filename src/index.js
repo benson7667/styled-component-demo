@@ -31,7 +31,8 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${(props) => props.theme.scaffoldBackgroundColor};
 
     & a {
-     color: ${(props) => props.theme.darkGray1} 
+      text-decoration:none;
+      color: ${(props) => props.theme.darkGray1} 
     }
   
   }

@@ -8,7 +8,7 @@ import {
   VideoInfoWrapper,
   TextSkeleton,
 } from "./styles";
-import { AvatarCircle } from "../../../../../shared/components/avatar_circle";
+import { AvatarCircle } from "../../../../../shared/components";
 
 const VideoCardSkeleton = (props) => (
   <VideoCardSkeletonWrapper>

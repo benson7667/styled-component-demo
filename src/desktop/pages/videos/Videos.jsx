@@ -19,7 +19,7 @@ class Videos extends Component {
         <ContentWrapper>
           <h3 style={{ marginBottom: "25px" }}>影视</h3>
 
-          <GridView colNumber={4} colMinWidth="160px">
+          <GridView colNumber={4} colMinWidth="160px" rowHeight="240px">
             <VideoCardSkeleton />
 
             {new Array(10).fill("").map((item, index) => (
@@ -27,7 +27,7 @@ class Videos extends Component {
                 key={index}
                 id={399290}
                 coverImage="https://lf6-xgcdn-tos.pstatp.com/img/tos-cn-i-0004/3512ee88401e47d4be07b1428c0dd1de~tplv-crop-center:1041:582.jpg"
-                thumbnailVideo="https://v3-tt.ixigua.com/f4248f22f2c8f1d5cb752a6cf82e3a77/5e946e8f/video/tos/cn/tos-cn-v-0000/59de72f418d4449bbfb3d5ea0f72f32e/?a=1768&br=0&bt=480&cr=0&cs=0&dr=0&ds=1&er=&l=202004132052110100140440780E130FBE&lr=&qs=13&rc=anVqdjs3a214czMzOGc8M0ApdTtpbDpzaHY6ZTMzOzpneWdvNWNmNG1icDRfLS01NGFzc2RvZHA1MWVncm0tLTJhNi06Yw%3D%3D&vl=&vr="
+                //thumbnailVideo="https://v3-tt.ixigua.com/f4248f22f2c8f1d5cb752a6cf82e3a77/5e946e8f/video/tos/cn/tos-cn-v-0000/59de72f418d4449bbfb3d5ea0f72f32e/?a=1768&br=0&bt=480&cr=0&cs=0&dr=0&ds=1&er=&l=202004132052110100140440780E130FBE&lr=&qs=13&rc=anVqdjs3a214czMzOGc8M0ApdTtpbDpzaHY6ZTMzOzpneWdvNWNmNG1icDRfLS01NGFzc2RvZHA1MWVncm0tLTJhNi06Yw%3D%3D&vl=&vr="
                 duration={302}
                 creator="科幻Fans布玛"
                 creatorAvatar="https://p3.pstatp.com/large/ef40008c39119bef556"

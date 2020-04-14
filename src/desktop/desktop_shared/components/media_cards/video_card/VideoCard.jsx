@@ -10,7 +10,7 @@ import {
   VideoTrafficWrapper,
   VideoTitle,
 } from "./styles";
-import { AvatarCircle } from "../../../../../shared/components/avatar_circle";
+import { AvatarCircle } from "../../../../../shared/components";
 import { convertSecondsToDuration } from "../../../../../shared/utils/time";
 import { getDurationAgo } from "../../../../../shared/utils/date";
 
@@ -36,7 +36,6 @@ class VideoCard extends Component {
       id,
       coverImage,
       creatorAvatar,
-      handleOnCardClick,
       thumbnailVideo,
       duration,
       creator,
@@ -46,14 +45,14 @@ class VideoCard extends Component {
     } = this.props;
 
     return (
-      <VideoCardWrapper onClick={handleOnCardClick(id)}>
+      <VideoCardWrapper>
         <VideoCoverImageWrapper
           onMouseLeave={this.handleRemoveVideo}
           onMouseEnter={this.handlePlayVideo}
         >
           <img alt="" src={coverImage} />
 
-          {isVideoPlaying && (
+          {isVideoPlaying && thumbnailVideo && (
             <video controls={false} autoPlay loop>
               <source src={thumbnailVideo} />
             </video>
@@ -91,7 +90,6 @@ VideoCard.propTypes = {
   title: string,
   postedDate: string,
   viewCount: number,
-  handleOnCardClick: func,
 };
 
 export default VideoCard;

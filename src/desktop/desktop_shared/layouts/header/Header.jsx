@@ -3,15 +3,16 @@ import { connect } from "react-redux";
 import { FiMenu, FiDownload, FiUpload, FiMonitor } from "react-icons/fi";
 
 import SearchBar from "../../components/search_bar";
-import Button from "../../../../shared/components/button";
+import { Button } from "../../../../shared/components";
+
+import { Actions } from "../../../desktop_shared/actions";
+import { XiguaLogoIcon, UserIcon } from "../../../../assets/icons/iconList";
 import {
   HeaderContainer,
   LeftWrapper,
   MiddleWrapper,
   RightWrapper,
 } from "./Styles";
-import { XiguaLogoIcon, UserIcon } from "../../../../constants/icons";
-import { Actions } from "../../../desktop_shared/actions";
 
 class Header extends Component {
   render() {

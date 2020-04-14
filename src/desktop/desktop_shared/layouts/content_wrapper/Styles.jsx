@@ -7,5 +7,9 @@ export const StyledAppContent = styled.div`
 `;
 
 export const StyledAppContentPadded = styled.div`
-  padding: 40px 30px;
+  padding: 40px 80px;
+
+  @media screen and (max-width: 1600px) {
+    padding: 40px 30px;
+  }
 `;

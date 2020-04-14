@@ -8,4 +8,5 @@ export const Grid = styled.div`
     const { colNumber, colMaxWidth, colMinWidth } = props;
     return `repeat(${colNumber}, minmax(${colMinWidth},${colMaxWidth}))`;
   }};
+  grid-template-rows: ${(props) => props.rowHeight};
 `;

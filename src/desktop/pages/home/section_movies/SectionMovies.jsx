@@ -20,7 +20,7 @@ class SectionMovies extends Component {
 
   render() {
     return (
-      <SectionWrapper title="电影">
+      <SectionWrapper title="电影" hasMore>
         <GridView colNumber={5} colMinWidth="160px">
           {[1, 2, 3, 4, 5].map((item) => (
             <CatalogueCard

@@ -3,7 +3,15 @@ import { number, object, string } from "prop-types";
 import { Grid } from "./styles";
 
 const GridView = (props) => {
-  const { colNumber, colMinWidth, colMaxWidth, gapCol, gapRow, style } = props;
+  const {
+    colNumber,
+    colMinWidth,
+    colMaxWidth,
+    gapCol,
+    gapRow,
+    rowHeight,
+    style,
+  } = props;
 
   return (
     <Grid
@@ -12,6 +20,7 @@ const GridView = (props) => {
       colNumber={colNumber}
       colMaxWidth={colMaxWidth}
       colMinWidth={colMinWidth}
+      rowHeight={rowHeight}
       style={{ ...style }}
     >
       {props.children}

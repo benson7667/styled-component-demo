@@ -13,13 +13,12 @@ export const VideoCoverImageWrapper = styled.div`
   overflow: hidden;
   border-radius: 10px;
   background-color: ${(props) => props.theme.lightGray1};
-  /* min-height: 150px; */
+  height: 100%;
 
   & img {
     width: 100%;
     object-fit: cover;
     transition: transform 0.3s ease-in-out;
-    /* min-height: 150px; */
   }
 
   & video {
@@ -28,7 +27,6 @@ export const VideoCoverImageWrapper = styled.div`
     position: absolute;
     left: 0;
     width: 100%;
-    /* min-height: 150px; */
   }
 
   &:hover img {
@@ -102,7 +100,7 @@ export const VideoCardImageSkeleton = styled.div`
   overflow: hidden;
   background-color: ${(props) => props.theme.lightGray1};
   border-radius: 10px;
-  /* min-height: 150px; */
+  height: 100%;
 
   & img {
     width: 60%;

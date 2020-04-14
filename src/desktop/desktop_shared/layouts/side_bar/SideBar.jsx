@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import { bool } from "prop-types";
-import { connect } from "react-redux";
-import { withTheme } from "styled-components";
-import { FiHome, FiMonitor, FiMusic } from "react-icons/fi";
 import {
   SideBarWrapper,
   SideBarList,
@@ -10,8 +7,10 @@ import {
   SideBarGroupTitle,
   CollapsedSideBarWrapper,
   CollapsedSideBarListItem,
-} from "./Styles";
+} from "./styles";
 import { getWindowDimensions } from "../../../../shared/utils/layouts";
+import { Link } from "../../../../shared/components";
+import { sideBarItems, sideBarItemsCollapsed } from "./constants";
 
 class SideBar extends Component {
   constructor(props) {
@@ -53,26 +52,22 @@ class SideBar extends Component {
 
   render() {
     const { isScrollbarTrackVisible } = this.state;
-    const { isSidebarCollapsed } = this.props;
+    const { isSidebarCollapsed, location } = this.props;
 
     if (isSidebarCollapsed) {
       return (
         <CollapsedSideBarWrapper>
           <SideBarList>
-            <CollapsedSideBarListItem active>
-              <FiHome size={15} />
-              <a href="/">首页</a>
-            </CollapsedSideBarListItem>
-
-            <CollapsedSideBarListItem>
-              <FiMonitor size={15} />
-              <a href="/">电影</a>
-            </CollapsedSideBarListItem>
-
-            <CollapsedSideBarListItem>
-              <FiMusic size={15} />
-              <a href="/">音樂</a>
-            </CollapsedSideBarListItem>
+            {sideBarItemsCollapsed.map((item) => (
+              <Link key={item.text} to={{ page: item.url }}>
+                <CollapsedSideBarListItem
+                  active={location.pathname === item.url}
+                >
+                  <span>{item.icon}</span>
+                  <span>{item.text}</span>
+                </CollapsedSideBarListItem>
+              </Link>
+            ))}
           </SideBarList>
         </CollapsedSideBarWrapper>
       );
@@ -85,31 +80,24 @@ class SideBar extends Component {
         onMouseEnter={this.handleSetScrollbarTrack}
       >
         <SideBarList>
-          <SideBarListItem>
-            <FiHome size={15} />
-            <a href="/">首页</a>
-          </SideBarListItem>
-          <SideBarListItem active>
-            <FiMonitor size={15} />
-            <a href="/">电影</a>
-          </SideBarListItem>
-          <SideBarListItem>
-            <FiMusic size={15} />
-            <a href="/">音樂</a>
-          </SideBarListItem>
-          <SideBarGroupTitle>特色频道</SideBarGroupTitle>
-          <SideBarListItem>
-            <FiMusic size={15} />
-            <a href="/">音樂</a>
-          </SideBarListItem>
-          <SideBarListItem>
-            <FiHome size={15} />
-            <a href="/">首页</a>
-          </SideBarListItem>
-          <SideBarListItem>
-            <FiMonitor size={15} />
-            <a href="/">电影</a>
-          </SideBarListItem>
+          {sideBarItems.map((item) => {
+            if (!item.groupTitle) {
+              return (
+                <Link key={item.text} to={{ page: item.url }}>
+                  <SideBarListItem active={location.pathname === item.url}>
+                    <span>{item.icon}</span>
+                    <span>{item.text}</span>
+                  </SideBarListItem>
+                </Link>
+              );
+            }
+
+            return (
+              <SideBarGroupTitle key={item.groupTitle}>
+                {item.groupTitle}
+              </SideBarGroupTitle>
+            );
+          })}
 
           <div style={{ height: "100px" }} />
         </SideBarList>
@@ -122,4 +110,4 @@ SideBar.propTypes = {
   isSidebarCollapsed: bool,
 };
 
-export default connect()(withTheme(SideBar));
+export default SideBar;

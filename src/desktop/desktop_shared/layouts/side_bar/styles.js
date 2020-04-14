@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const SIDE_BAR_EXPAND_WIDTH = "200px";
 const SIDE_BAR_COLLAPSED_WIDTH = "65px";
+const SIDE_BAR_HIDE = "0px";
 
 export const SideBarWrapper = styled.div`
   width: ${SIDE_BAR_EXPAND_WIDTH};
@@ -38,14 +39,12 @@ export const SideBarListItem = styled.li`
   background-color: ${(props) => (props.active ? "#fff2f8" : "transparent")};
   transition: background-color 0.4s ease-in;
   color: ${(props) =>
-    props.active ? props.theme.primaryColor : props.theme.darkGray3};
+    props.active ? props.theme.primaryColor : props.theme.darkGray2};
+  text-decoration: none;
+  font-size: 12px;
 
-  & a {
-    text-decoration: none;
-    margin-left: 25px;
-    font-size: 12px;
-    color: ${(props) =>
-      props.active ? props.theme.primaryColor : props.theme.primaryGray};
+  & span {
+    margin-right: 15px;
   }
 
   :hover {
@@ -76,20 +75,18 @@ export const CollapsedSideBarListItem = styled.li`
   cursor: pointer;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 15px 10px;
   align-items: center;
   transition: color 0.4s ease-in-out;
   background-color: ${(props) => (props.active ? "#fff2f8" : "transparent")};
   transition: background-color 0.4s ease-in;
   color: ${(props) =>
-    props.active ? props.theme.primaryColor : props.theme.darkGray3};
+    props.active ? props.theme.primaryColor : props.theme.darkGray2};
+  font-size: 10px;
+  text-decoration: none;
 
-  & a {
-    text-decoration: none;
-    font-size: 12px;
-    margin-top: 5px;
-    color: ${(props) =>
-      props.active ? props.theme.primaryColor : props.theme.primaryGray};
+  & span:nth-child(1) {
+    margin-bottom: 4px;
   }
 
   :hover {

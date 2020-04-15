@@ -6,7 +6,7 @@ import {
 } from "./styles";
 import XiguaLogoGray from "../../../../../assets/logo/xigua-logo-gray.svg";
 
-const CatalogueCardSkeleton = (props) => {
+const CatalogueCardSkeleton = () => {
   return (
     <CatalogueSkeletonWrapper>
       <ImageSkeleton>

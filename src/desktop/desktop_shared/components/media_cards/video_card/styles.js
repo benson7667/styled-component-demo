@@ -18,6 +18,7 @@ export const VideoCoverImageWrapper = styled.div`
   & img {
     width: 100%;
     object-fit: cover;
+    height: 100%;
     transition: transform 0.3s ease-in-out;
   }
 
@@ -26,6 +27,7 @@ export const VideoCoverImageWrapper = styled.div`
     z-index: 1;
     position: absolute;
     left: 0;
+    height: 100%;
     width: 100%;
   }
 
@@ -101,6 +103,8 @@ export const VideoCardImageSkeleton = styled.div`
   background-color: ${(props) => props.theme.lightGray1};
   border-radius: 10px;
   height: 100%;
+  padding-top: 20%;
+  padding-bottom: 20%;
 
   & img {
     width: 60%;

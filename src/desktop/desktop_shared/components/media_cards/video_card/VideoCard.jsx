@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { func, string, number } from "prop-types";
+import { string, number } from "prop-types";
 import {
   VideoCardWrapper,
   VideoCoverImageWrapper,

@@ -24,7 +24,7 @@ export const sideBarItems = [
   {
     icon: <FiMonitor size={15} />,
     text: "电影",
-    url: "/movies",
+    url: "/dianying",
   },
   {
     icon: <FiVideo size={15} />,
@@ -88,7 +88,7 @@ export const sideBarItemsCollapsed = [
   {
     icon: <FiVideo size={15} />,
     text: "电影",
-    url: "/movies",
+    url: "/dianying",
   },
   {
     icon: <FiMusic size={15} />,

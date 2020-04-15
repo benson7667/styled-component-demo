@@ -149,6 +149,8 @@ export const ImageSkeleton = styled.div`
   border-radius: 10px;
   height: 100%;
   overflow: hidden;
+  padding-top: 60%;
+  padding-bottom: 60%;
   background-color: ${(props) => props.theme.lightGray1};
 
   & img {

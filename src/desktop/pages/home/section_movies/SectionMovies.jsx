@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { SectionWrapper, GridView } from "../../../desktop_shared/layouts";
 import {
   CatalogueCard,
-  // CatalogueCardSkeleton,
+  CatalogueCardSkeleton,
 } from "../../../desktop_shared/components/media_cards/catalogue_card";
 
 class SectionMovies extends Component {
@@ -40,6 +40,10 @@ class SectionMovies extends Component {
           署长和毒枭大佬是拜把兄弟，两人一起进行非法交易，见数次向张行贿无果，他们发毒誓要让张生不如死"
               size="fluid"
             />
+          ))}
+
+          {[1, 2, 3, 4, 5].map((item) => (
+            <CatalogueCardSkeleton />
           ))}
         </GridView>
       </SectionWrapper>

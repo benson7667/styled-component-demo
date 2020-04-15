@@ -4,15 +4,16 @@ import { FiMenu, FiDownload, FiUpload, FiMonitor } from "react-icons/fi";
 
 import SearchBar from "../../components/search_bar";
 import { Button } from "../../../../shared/components";
+import UserAuth from "../../../desktop_shared/components/user_auth";
 
 import { Actions } from "../../../desktop_shared/actions";
-import { XiguaLogoIcon, UserIcon } from "../../../../assets/icons/iconList";
+import { XiguaLogoIcon } from "../../../../assets/icons/iconList";
 import {
   HeaderContainer,
   LeftWrapper,
   MiddleWrapper,
   RightWrapper,
-} from "./Styles";
+} from "./styles";
 
 class Header extends Component {
   render() {
@@ -55,12 +56,7 @@ class Header extends Component {
             </a>
           </li>
 
-          <li>
-            <div className="login-btn">
-              <img alt="user-icon" src={UserIcon} />
-              <span className="login-btn-text">登录</span>
-            </div>
-          </li>
+          <UserAuth />
         </RightWrapper>
       </HeaderContainer>
     );

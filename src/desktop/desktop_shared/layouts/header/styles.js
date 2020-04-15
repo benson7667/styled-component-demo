@@ -54,20 +54,6 @@ export const RightWrapper = styled.ul`
       margin-top: 4px;
     }
 
-    & .login-btn {
-      display: flex;
-      align-items: center;
-      border: 1px solid ${(props) => props.theme.primaryColor};
-      border-radius: 40px;
-      padding: 8px;
-      color: ${(props) => props.theme.primaryColor};
-    }
-
-    & .login-btn-text {
-      margin-left: 5px;
-      font-size: 12px;
-    }
-
     :hover {
       & a {
         color: ${(props) => props.theme.primaryColor};

@@ -57,7 +57,7 @@ class Button extends Component {
           borderRadius={borderRadius}
           iconColor={iconColor}
           onClick={onClick}
-          style={style}
+          style={{ ...style }}
           textSize={textSize}
           value={value}
         >

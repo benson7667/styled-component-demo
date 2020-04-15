@@ -36,7 +36,8 @@ export const SideBarListItem = styled.li`
   padding: 10px 25px 10px;
   align-items: center;
   transition: color 0.4s ease-in-out;
-  background-color: ${(props) => (props.active ? "#fff2f8" : "transparent")};
+  background-color: ${(props) =>
+    props.active ? props.theme.lightPink1 : "transparent"};
   transition: background-color 0.4s ease-in;
   color: ${(props) =>
     props.active ? props.theme.primaryColor : props.theme.darkGray2};
@@ -78,7 +79,8 @@ export const CollapsedSideBarListItem = styled.li`
   padding: 15px 10px;
   align-items: center;
   transition: color 0.4s ease-in-out;
-  background-color: ${(props) => (props.active ? "#fff2f8" : "transparent")};
+  background-color: ${(props) =>
+    props.active ? props.theme.lightPink1 : "transparent"};
   transition: background-color 0.4s ease-in;
   color: ${(props) =>
     props.active ? props.theme.primaryColor : props.theme.darkGray2};

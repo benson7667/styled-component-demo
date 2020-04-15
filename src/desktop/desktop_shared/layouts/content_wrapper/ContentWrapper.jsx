@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { any } from "prop-types";
-import { StyledAppContent, StyledAppContentPadded } from "./Styles";
+import { StyledAppContent, StyledAppContentPadded } from "./styles";
 
 const ContentWrapper = (props) => (
   <StyledAppContent isSidebarCollapsed={props.isSidebarCollapsed}>

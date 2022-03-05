@@ -1,2 +1,1 @@
-## Hosted URL
-https://bytedance-xigua-cloned.firebaseapp.com/
+A minimal clone of https://www.ixigua.com/ to demonstrate the usage of `styled-component`. Nothing else ~
